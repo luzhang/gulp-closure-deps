@@ -11,7 +11,7 @@ var cache = {};
 var cwd, prefix, baseDir;
 var moduleRegex = /^\s*goog\.module\(\s*['"](.+?)['"]\s*\)/;
 var provideRegex = /^\s*goog\.provide\(\s*['"](.+?)['"]\s*\)/;
-var requireRegex = /^\s*(?:(?:var|let|const)\s+[a-zA-Z_$][a-zA-Z0-9$_]*\s*=\s*)?goog\.require\(\s*['"](.+?)['"]\s*\)/;
+var requireRegex = /^\s*(?:(?:var|let|const)\s+{?[a-zA-Z_$][a-zA-Z0-9$_,\s]*}?\s*=\s*)?goog\.require\(\s*['"](.+?)['"]\s*\)/;
 
 var getMatches = function(contentsLines, regex) {
   var matches = [];
