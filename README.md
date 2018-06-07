@@ -1,23 +1,24 @@
-# [gulp](http://gulpjs.com)-closure-deps
-[![Build Status](https://secure.travis-ci.org/steida/gulp-closure-deps.png?branch=master)](http://travis-ci.org/steida/gulp-closure-deps) [![Dependency Status](https://david-dm.org/steida/gulp-closure-deps.png)](https://david-dm.org/steida/gulp-closure-deps) [![devDependency Status](https://david-dm.org/steida/gulp-closure-deps/dev-status.png)](https://david-dm.org/steida/gulp-closure-deps#info=devDependencies)
+# gulp-closure-deps
 
-> Google Closure Library depswriter.py port for gulp
+Google Closure Library depswriter.py port for [gulp](https://github.com/gulpjs/gulp).
+
+This is NOT the [gulp-closure-deps available on npm](https://www.npmjs.com/package/gulp-closure-deps), whose original repository has been deleted by [its author](https://github.com/steida). This repository is a fork that adds support for destructuring imports, and ES6 modules.
 
 
 ## Install
 
 ```
-npm install --save-dev gulp-closure-deps
+npm install --save-dev github:nckh/gulp-closure-deps
 ```
 
 
 ## Example
 
 ```js
-var gulp = require('gulp');
-var closureDeps = require('gulp-closure-deps');
+const gulp = require('gulp');
+const closureDeps = require('gulp-closure-deps');
 
-var paths = {
+const paths = {
   scripts: [
     'bower_components/closure-library/closure/goog/**/*.js',
     'bower_components/este-library/este/**/*.js',
