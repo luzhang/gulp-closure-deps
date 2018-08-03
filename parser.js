@@ -57,8 +57,12 @@ function getDependencyCommand(content, filePath, prefix) {
   const closureRequires = getClosureRequires(content);
 
   const es6Imports = getEs6Imports(content).map((depPath) => {
-    const depAbsPath = path.join(path.dirname(filePath), depPath);
-    return path.join(prefix, path.relative('', depAbsPath));
+    if (depPath[0] === '/') {
+      return path.join(prefix, depPath);
+    } else {
+      const depAbsPath = path.join(path.dirname(filePath), depPath);
+      return path.join(prefix, path.relative('', depAbsPath));
+    }
   });
 
   const requires = [].concat(...closureRequires, ...es6Imports);
