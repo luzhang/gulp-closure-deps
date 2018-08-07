@@ -57,6 +57,7 @@ function getDependencyCommand(content, filePath, prefix) {
   const closureRequires = getClosureRequires(content);
 
   const es6Imports = getEs6Imports(content).map((depPath) => {
+    // Supports absolute paths
     if (depPath[0] === '/') {
       return path.join(prefix, depPath);
     } else {
